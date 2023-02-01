@@ -19,9 +19,8 @@ body {
 }
 
 h1 {
-  margin: 2% 0 5%;
+  margin: 30% 0 2%;
 }
-
 .faq-container {
   max-width: 800px;
 }
@@ -41,4 +40,75 @@ h1 {
   background: rgba(255, 255, 255, 0.7);
   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
     rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.faq.active::before,
+.faq.active::after {
+  position: absolute;
+  content: "\f075";
+  font-family: "Font Awesome 5 Free";
+  color: rgb(26, 80, 217);
+  font-size: 5rem;
+  opacity: 0.2;
+  top: 20px;
+  left: 20px;
+  z-index: 0;
+}
+
+.faq.active::before {
+  color: rgb(20, 227, 20);
+  top: -10px;
+  left: -20px;
+  transform: rotateY(180deg);
+}
+
+.faq-title {
+  margin: 0 10% 0 0;
+}
+
+.faq-text {
+  display: none;
+  margin: 2% 0 0;
+}
+
+.faq.active .faq-text {
+  display: block;
+}
+
+.faq-toggle {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  top: 30px;
+  right: 30px;
+  height: 30px;
+  width: 30px;
+  font-size: 16px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.faq-toggle:focus {
+  outline: 0;
+}
+
+.faq-toggle .fa-times {
+  display: none;
+}
+
+.faq.active .faq-toggle .fa-times {
+  color: #e7e7e7;
+  display: block;
+}
+
+.faq.active .faq-toggle .fa-chevron-down {
+  display: none;
+}
+
+.faq.active .faq-toggle {
+  background-color: #888;
 }
